@@ -64,16 +64,47 @@ def cadastrar_produtos() -> None:
     menu()
 
 def listar_produto() -> None:
-    pass
+    if len(produtos) > 0:
+        print('Produtos cadastrados')
+        print('____________________')
+              for produto in produtos:
+        print('produto')
+        print('____________________')
+        sleep(1)
+    else:
+        print('Ainda não existe produtos cadastrados')
+        sleep(2)
+        menu()
 
 def visualizar_carrinho() -> None:
     pass
 
 def fechar_pedido() -> None:
-    pass
+    if len(carrinho) > 0:
+        print('Produtos do carrinho')
+        for item in carrinho:
+            for dados in item.itemns():
+                print(dados[0])
+                print(f'Quantidade: {dados[1]})')
+                valor_total += dados[0].preco = dados[1]
+                print('-------------------')
+                sleep(1)
+            print(f'Sua fatura é {formata_float_str_moeda(valor_total)}')
+            print('Volte sempre!')
+            carrinho.clear()
+            sleep(5)
+    else:
+        print('Ainda não existem produtos no carrinho')
+        sleep(2)
+        menu()
 
 def pega_produto_por_codigo(codigo: int) -> produto:
-    pass
+    p: produto = None
+
+    for produtos in produtos:
+        if produto.codigo == codigo:
+            p = produto
+        return p
 
 if __name__ == '__main__':
     main()
