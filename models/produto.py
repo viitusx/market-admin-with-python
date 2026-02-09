@@ -1,30 +1,36 @@
 from utils.helper import formata_float_str_moeda
 
-    class produto:
-        contador: int = 1
 
-        def __init__(self, nome: str, valor: float) -> None:
-            self.__codigo: int = produto.contador
-            self.__nome: str = nome
-            self.__valor: float = valor
-            produto.contador +=1
+class Produto:
+    """Representa um produto com código, nome e valor."""
 
-        @property
-        def nome(self: object) -> int:
-            return self.__codigo
+    _contador: int = 1
 
-        @property
-        def valor(self: object) -> str:
-            return self.__nome
+    def __init__(self, nome: str, valor: float) -> None:
+        self.__codigo: int = Produto._contador
+        self.__nome: str = nome
+        self.__valor: float = valor
 
-        @property
-        def valor(self: object)  -> float:
-            return self.__valor
+        Produto._contador += 1
 
-        def __str__(self: object) -> str:
-            return f'codigo: {self.codigo} \nnome: {self.nome} \nvalor: {formata_float_str_moeda(self.valor)}'
+    @property
+    def codigo(self) -> int:
+        """Retorna o código do produto."""
+        return self.__codigo
 
+    @property
+    def nome(self) -> str:
+        """Retorna o nome do produto."""
+        return self.__nome
 
+    @property
+    def valor(self) -> float:
+        """Retorna o valor do produto."""
+        return self.__valor
 
-
-
+    def __str__(self) -> str:
+        return (
+            f"Código: {self.codigo}\n"
+            f"Nome: {self.nome}\n"
+            f"Valor: {formata_float_str_moeda(self.valor)}"
+        )

@@ -1,7 +1,13 @@
-from models.produto import produto
+from models.produto import Produto
 
-    produtoX = produto("produtoX", 3000)
-    produtoY = produto("produtoY", 5000)
 
-    print(produtoX)
-    print(produtoY)
+def main() -> None:
+    produto_x = Produto("Produto X", 3000.0)
+    produto_y = Produto("Produto Y", 5000.0)
+
+    print(produto_x)
+    print(produto_y)
+
+
+if __name__ == "__main__":
+    main()
