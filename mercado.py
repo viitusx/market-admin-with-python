@@ -171,3 +171,4 @@ def pega_produto_por_codigo(codigo: int) -> Produto | None:
 
 if __name__ == "__main__":
     main()
+z
